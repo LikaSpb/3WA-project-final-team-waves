@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Nunito+Sans:wght@300;400&display=swap');
+
+// Define variables
+$MinScreenTablet: 499px;
+$MidScreenTablet: 699px;
+$MaxScreenTablet: 899px;
+$MinScreenDesktop: 900px;
+
+$navbar-height : 50px;
+
+$primaryColor: #ff6600;
+$primaryColorHover: #ff5500;
+$secondaryColor: #4caf50;
+$secondaryColorHover: #45a049;
+$backgroundColor: #ffffff;
+$textColor: #333333;
+$borderColor: #e0e0e0;
+$shadowColor: rgba(0, 0, 0, 0.1);
+
+$navbarColor : #01225f;
+
+$secondaryBackgroundColor: #01225faa;
+$secondaryBackgroundColorHover: #01225fd1;
+$sidebarTextColor: rgba(255, 255, 255, 1);
+$sidebarHoverColor: #fc5340;
+
+$avatarSize: 100px;
+$iconSize: 40px;
+$sidebarWidth : 20%;
+
+
+
+// Global properties
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+// import
+@import './Home/index.scss';
+@import './Home/index-tablet.scss';
+@import './Home/index-desktop.scss';
+
+@import './Common/animation.scss';
+@import './Common/NavBar/index.scss';
+@import './Common/NavBar/index-tablet.scss';
+@import './Common/NavBar/index-desktop.scss';
+
+@import './LoginRegister/index.scss';
+@import './LoginRegister/index-tablet.scss';
+@import './LoginRegister/index-desktop.scss';
+
+
+@import './ProfilPage/Profil/index.scss';
+@import './ProfilPage/Profil/index-desktop.scss';
+
+@import './ProfilPage/ModalEditInformations/';
+@import './ProfilPage/ModalEditEmail/';
+@import './ProfilPage/ModalEditPassword/';
+@import './ProfilPage/ModalEditPhoto/';
+@import './ProfilPage/ModalAdminViewAllUser/';
+
+@import './News/Posts/index.scss';
+
+@import './News/Posts/Post/Comment/comment.scss';
+@import './News/Posts/Post/Comment/createComment.scss';
+@import './News/Posts/Post/createPost.scss';
+@import './News/Posts/Post/post.scss';
+
+@import './News/Sidebar/index.scss';
+@import './News/Sidebar/index-tablet.scss';
+
+
+@import './NewsPage';
+
+@import './Notifications';

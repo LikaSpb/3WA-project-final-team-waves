@@ -1,0 +1,208 @@
+.left-container {
+  display: none;
+}
+
+.login-register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .logo {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .login-container,
+  .register-container {
+    background-color: $backgroundColor;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px $shadowColor;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+
+  .login-card {
+    h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-bottom: 15px;
+      display: block;
+      align-items: center;
+    }
+
+    .back-button {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: $secondaryColor;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      text-decoration: none;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      padding: 8px 16px;
+      transition: opacity 0.3s, color 0.3s, border-color 0.3s, background-color 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+        color: $secondaryColorHover;
+        border-color: $secondaryColorHover;
+        background-color: rgba(19, 117, 4, 0.086);
+      }
+    }
+
+    .login-form {
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding-right: 40px;
+        }
+
+        .eye-icon {
+          position: absolute;
+          right: 10px;
+          cursor: pointer;
+          fill: #ccc;
+          transition: fill 0.3s;
+          z-index: 1;
+        }
+
+        input[type="password"] {
+          padding-right: 10px;
+        }
+
+        input[type="date"] {
+          .calendar-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+          }
+        }
+      }
+
+      .remember-forgot {
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: space-between;
+
+        .remember-label {
+          display: flex;
+          align-items: center;
+
+          input[type="checkbox"] {
+            margin-right: 5px;
+            font-size: 12px;
+            color: #777;
+          }
+
+          .remember-text {
+            cursor: pointer;
+            font-size: 12px;
+            color: #777;
+          }
+        }
+      }
+
+
+
+      .password-rules {
+        p {
+          color: #777;
+          font-size: 12px;
+          padding-bottom: 10px;
+          color: red;
+
+          &.valid {
+            color: green;
+          }
+
+
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: $secondaryColor;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: $secondaryColorHover;
+        }
+      }
+    }
+
+    .register-link {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        font-size: 14px;
+        color: #777;
+        margin-right: 10px;
+      }
+
+
+
+      button {
+        background: none;
+        border: none;
+        color: $secondaryColor;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @import "./index-tablet.scss";
+  @import "./index-desktop.scss";
+
+}

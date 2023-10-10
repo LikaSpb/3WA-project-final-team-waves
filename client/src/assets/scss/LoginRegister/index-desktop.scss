@@ -1,0 +1,22 @@
+@media (min-width: $MinScreenDesktop) {
+
+    .login-register-wrapper {
+        display: flex;
+        height: 100vh;
+    }
+
+    .left-container {
+        display: block;
+        background-color: $secondaryBackgroundColorHover;
+        width: 50%;
+        height: 100vh;
+    }
+
+    .login-register-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+}

@@ -1,0 +1,120 @@
+.post-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    background-color: $backgroundColor;
+    border: 1px solid $borderColor;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0px 4px 12px $shadowColor;
+        transform: scale(1.02);
+    }
+
+    .post-author {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 5px;
+
+        img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        span {
+            font-weight: 500;
+            color: $textColor;
+
+            &.post-metadata {
+                color: lighten($textColor, 20%);
+                margin-left: auto;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid lighten($borderColor, 10%);
+        border-radius: 4px;
+        resize: none;
+        transition: border 0.2s;
+
+        &:focus {
+            border-color: $primaryColor;
+        }
+    }
+
+    .icon-button {
+        background-color: transparent;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        transition: transform 0.2s, color 0.2s;
+        margin-left: 8px;
+        display: inline-block;
+
+        svg {
+            fill: #888;
+            width: 18px;
+            height: 18px;
+        }
+
+        &:hover {
+            color: $primaryColor;
+            transform: translateY(-2px);
+        }
+    }
+
+    .post-content {
+        font-size: 1rem;
+        color: $textColor;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        border-left: 3px solid $primaryColor;
+        padding-left: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        display: block;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+// media query
+
+@media screen and (min-width: $MinScreenTablet) {
+    .posts-container {
+        width: calc(100% - $sidebarWidth);
+        margin-right: 0;
+
+        .comment-container {
+            width: 100%;
+        }
+    }
+
+
+}
+
+@media screen and (min-width: $MinScreenDesktop) {
+    .new-post {
+        width: calc(100% - $sidebarWidth);
+        margin: 0 auto;
+    }
+
+    .post-container {
+        width: calc(100% - $sidebarWidth);
+        margin: auto;
+
+        .comment-container {
+            width: 100%;
+
+        }
+
+    }
+}

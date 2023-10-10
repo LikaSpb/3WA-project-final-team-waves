@@ -1,0 +1,13 @@
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #f7f8fc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}

@@ -1,0 +1,118 @@
+.comment-container {
+    background-color: $backgroundColor;
+    border-radius: 8px;
+    border: 1px solid $borderColor;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    margin-top: 1rem;
+
+    .single-comment {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background-color: rgba($primaryColor, 0.05);
+        border-radius: 4px;
+
+        .comment-author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 8px;
+            }
+
+            .comment-author-name {
+                font-weight: bold;
+                margin-right: 1rem;
+                color: $textColor;
+            }
+
+            .comment-date {
+                color: $textColor;
+                font-size: 0.85rem;
+            }
+        }
+
+        form {
+            width: 100%;
+
+            textarea {
+                display: block;
+                width: 100%;
+                padding: 8px;
+                border: 1px solid $borderColor;
+                border-radius: 4px;
+                resize: none;
+                box-sizing: border-box;
+                margin-bottom: 8px;
+            }
+
+            .icon-button {
+                display: inline-block;
+                margin-left: 0;
+            }
+        }
+
+        .icon-button,
+        PenToSquareIcon,
+        TrashIcon {
+            background-color: transparent;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+            margin-left: 8px;
+            display: inline-block;
+
+            svg {
+                fill: #888;
+                width: 18px;
+                height: 18px;
+            }
+
+            &:hover {
+                color: $primaryColor;
+                transform: translateY(-2px);
+            }
+        }
+
+        .comment-content {
+            color: $textColor;
+            overflow-wrap: break-word;
+            overflow-y: auto;
+            max-height: 150px;
+            word-wrap: break-word;
+            display: block;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+    }
+
+    .toggle-comments-button {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        background-color: $primaryColor;
+        color: $backgroundColor;
+        font-weight: 500;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $primaryColorHover;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}

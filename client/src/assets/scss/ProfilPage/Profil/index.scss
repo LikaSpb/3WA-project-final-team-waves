@@ -1,0 +1,185 @@
+.profile-container {
+    text-align: center;
+    position: relative;
+    min-height: calc(100vh - #{$navbar-height});
+    color: $textColor;
+
+    .blue-section {
+        background-color: $secondaryBackgroundColor;
+        height: 30vh;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .profile-card,
+    .info-card {
+        background-color: $backgroundColor;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px $shadowColor;
+        padding: 20px;
+        width: 85%;
+    }
+
+    .profile-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+
+        .user-avatar {
+            position: relative;
+            width: $avatarSize;
+            height: $avatarSize;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .avatar-container {
+                width: $avatarSize;
+                height: $avatarSize;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+
+                img {
+                    width: $avatarSize;
+                    height: $avatarSize;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            .info-value {
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+
+            .info-profession,
+            .info-company {
+                font-size: 16px;
+                margin-top: 5px;
+            }
+
+            .info-profession {
+                font-style: italic;
+                color: lighten($textColor, 20%);
+            }
+        }
+
+        .edit-avatar-button {
+            border: none;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $primaryColorHover;
+            }
+
+            .camera-icon {
+                background-color: $primaryColor;
+                color: $backgroundColor;
+                cursor: pointer;
+                font-size: 24px;
+                width: $iconSize;
+                height: $iconSize;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .account-settings-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        bottom: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 350px;
+        margin: 0;
+
+        .account-settings {
+            font-size: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .info-card {
+            background-color: $backgroundColor;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px $shadowColor;
+            padding: 20px;
+            width: 85%;
+            height: 300px;
+            margin: 0 auto;
+
+            .info-option {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 16px;
+                margin-bottom: 30px;
+
+                .info-label {
+                    flex: 1;
+                    text-align: left;
+                    margin-left: 15px;
+                }
+
+                .custom-icon {
+                    background-color: $primaryColor;
+                    color: $backgroundColor;
+                    border-radius: 50%;
+                    width: $iconSize;
+                    height: $iconSize;
+                    margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .info-link,
+                .info- {
+                    background: none;
+                    border: none;
+                    color: $primaryColor;
+                    cursor: pointer;
+                    font-size: 14px;
+                    transition: background-color 0.3s opacity 0.3s, color 0.3s;
+
+                    &:hover {
+                        opacity: 0.8;
+                        transform: scale(1.10);
+                    }
+                }
+            }
+        }
+    }
+
+    @import "./index-desktop.scss";
+}

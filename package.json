@@ -1,0 +1,8 @@
+{
+  "name": "projetfinal3wa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.msdevagency.net:msdevagency/lika-project.git",
+  "author": "LikaSpb <lobodzinskaya.lika@gmail.com>",
+  "license": "MIT"
+}

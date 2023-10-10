@@ -1,0 +1,44 @@
+@media (min-width: $MinScreenDesktop) {
+    .navbar-container {
+        width: 100%;
+
+        .navbar-logo {
+            font-size: 24px;
+
+            img {
+                width: 30px;
+                margin-right: 10px;
+            }
+        }
+
+        .navbar-menu {
+            .menu-icon {
+                width: 25px;
+                height: 18px;
+
+                .bar {
+                    height: 3px;
+                }
+            }
+
+            .navbar-links {
+                position: absolute;
+                top: 36px;
+                right: 0;
+                background-color: $navbarColor;
+                width: 150px;
+                border-radius: 4px;
+                padding: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+                .navbar-item {
+                    padding-bottom: 10px;
+
+                    .navbar-link {
+                        padding: 10px 15px;
+                    }
+                }
+            }
+        }
+    }
+}

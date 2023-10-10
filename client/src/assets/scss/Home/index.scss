@@ -1,0 +1,90 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../static/background-waves-new.jpg") no-repeat;
+    background-size: cover;
+    padding: 0 20px;
+
+    header {
+        overflow: hidden;
+
+        .logo-text-container {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .logo {
+            img {
+                width: 60%;
+                opacity: 0;
+                filter: invert(100%);
+                animation: opacity 2s ease-in-out forwards;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgba(255, 255, 255, 1);
+            margin-top: 20px;
+
+            h1 {
+                margin: 0;
+                font-size: 2.5rem;
+                font-family: 'Montserrat', sans-serif;
+                filter: drop-shadow(1px 1px 1px black);
+                transform: translateY(1000%);
+                opacity: 0;
+                animation:
+                    opacity 3s ease-in-out forwards,
+                    translateFromBottom 2s ease-in-out forwards;
+                animation-delay: 1s;
+            }
+
+            h2 {
+                margin: 5px 0 0;
+                font-size: 1.2rem;
+                font-family: 'Abel', sans-serif;
+                opacity: 0;
+                transform: translateY(1000%);
+                opacity: 0;
+                animation:
+                    opacity 3s ease-in-out forwards,
+                    translateFromBottom 2s ease-in-out forwards;
+                animation-delay: 1s;
+            }
+
+            .custom-button {
+                background: transparent;
+                border: 2px solid rgba(255, 255, 255, 1);
+                border-radius: 10px;
+                color: rgba(255, 255, 255, 1);
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+                margin-top: 30px;
+                text-decoration: none;
+                transform: scale(0);
+                animation: scale 0.8s ease-in-out forwards;
+                animation-delay: 4s;
+                text-transform: uppercase;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+
+    @import "./index-tablet.scss";
+    @import "./index-desktop.scss";
+}

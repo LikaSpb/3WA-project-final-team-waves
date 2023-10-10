@@ -1,0 +1,36 @@
+@media (min-width: $MinScreenTablet) {
+    .navbar-container {
+        width: 100%;
+
+        .navbar-logo {
+            font-size: 22px;
+
+            img {
+                width: 28px;
+                margin-right: 9px;
+            }
+        }
+
+        .navbar-menu {
+            .menu-icon {
+                width: 24px;
+                height: 18px;
+
+                .bar {
+                    height: 3px;
+                }
+            }
+
+            .navbar-links {
+                width: 140px;
+                padding: 9px;
+
+                .navbar-item {
+                    .navbar-link {
+                        padding: 9px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.comment-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $backgroundColor;
+    border-radius: 8px;
+    border: 1px solid $borderColor;
+    padding: 0.5rem 1rem;
+    transition: box-shadow 0.3s ease-in-out;
+    width: 100%;
+
+    &:hover {
+        box-shadow: 0px 2px 8px $shadowColor;
+    }
+
+    textarea {
+        flex: 1;
+        border: 1px solid $borderColor;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        color: $textColor;
+        font-size: 1rem;
+        transition: border-color 0.3s ease-in-out;
+        resize: none;
+        overflow: auto;
+
+        &:focus {
+            border-color: $primaryColor;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: rgba($textColor, 0.6);
+        }
+    }
+
+    button {
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: $primaryColor;
+        color: $backgroundColor;
+        font-weight: 500;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $primaryColorHover;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}

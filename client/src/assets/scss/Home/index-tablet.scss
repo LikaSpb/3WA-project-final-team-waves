@@ -1,0 +1,16 @@
+@media (min-width: $MinScreenTablet) {
+    .text {
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        .custom-button {
+            padding: 12px 25px;
+            font-size: 1rem;
+        }
+    }
+}

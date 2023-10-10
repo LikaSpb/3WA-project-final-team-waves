@@ -1,0 +1,54 @@
+.Notification {
+    background-color: blue;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    transform: translateX(1000px);
+    z-index: 99;
+    animation: enterNotif 0.5s ease-in forwards;
+
+    header {
+        font-weight: bolder;
+        margin-bottom: 10px;
+    }
+
+    &.success {
+        background-color: $secondaryColor;
+    }
+
+    &.danger {
+        background-color: $primaryColor;
+    }
+
+    &.error {
+        background-color: red;
+    }
+
+    &.leaveNotif {
+        animation: leaveNotif 0.5s ease-in forwards;
+    }
+}
+
+@keyframes enterNotif {
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes leaveNotif {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(1000px);
+    }
+}

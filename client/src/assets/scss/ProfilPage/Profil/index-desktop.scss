@@ -1,0 +1,42 @@
+@media (min-width: $MinScreenDesktop) {
+
+    .profile-container {
+
+        .profile-card,
+        .info-card {
+            padding: 20px;
+            width: 85%;
+        }
+
+        .account-settings-wrapper {
+            margin-top: 80px;
+        }
+
+        .profile-card {
+            margin-top: 50px;
+        }
+
+        .user-avatar {
+            width: $avatarSize + 20px;
+            height: $avatarSize + 20px;
+
+            .avatar-container,
+            img {
+                width: $avatarSize + 20px;
+                height: $avatarSize + 20px;
+            }
+        }
+
+        .user-info {
+            Ajout de marge en haut pour décaler vers le bas .info-value {
+                font-size: 20px;
+            }
+
+            .info-profession,
+            .info-company {
+                font-size: 18px;
+            }
+        }
+
+    }
+}
