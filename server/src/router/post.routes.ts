@@ -22,6 +22,7 @@ router.put(
   postController.editPost,
 )
 router.get('/', authMiddleware, postController.getAllPosts)
+
 router.delete('/:postId', authMiddleware, postController.deletePost)
 
 export default router

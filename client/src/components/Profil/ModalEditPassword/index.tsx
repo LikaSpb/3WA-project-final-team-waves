@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useAppDispatch } from "../../../hooks/store.hooks";
 import { Config } from "../../../config";
-import { setUserData } from "../../../store/slicers/user";
 import { useNotifications } from "../../../hooks/notifications.hook";
 import { EyeSlashIcon } from "../../Common/Icons/EyeSlashIcon";
 
@@ -22,7 +20,6 @@ const ModalEditPassword: React.FC<ModalEditPasswordProps> = ({
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const dispatch = useAppDispatch();
   const { showNotifications } = useNotifications();
 
   const [isCurrentPasswordVisible, setIsCurrentPasswordVisible] =

@@ -33,24 +33,20 @@ export async function authMiddleware(
   next: NextFunction,
 ) {
   try {
-    // Récupérer le token depuis les cookies
     const tokenBeared = req.cookies['Authorization']
     if (!tokenBeared) throw new Error('Token not found !!')
 
     const token = tokenBeared.split(' ')[1]
 
-    // Vérifier le token et récupérer le User-Agent du token décodé
     const decodedToken: JwtPayload = jwt.verify(
       token,
       process.env.SECRET_KEY,
     ) as JwtPayload
 
-    // Récupérer l'utilisateur depuis la base de données
     const userId = decodedToken.id
     const user: HydratedDocument<IUser> = await userSchema.findById(userId)
     if (!user) throw new Error('User not found !!')
 
-    // Vérifiez le rôle de l'utilisateur
     if (user.role !== decodedToken.role) throw new Error('Error with role !!')
 
     if (!bcrypt.compare(req.headers['user-agent'], user.agent))

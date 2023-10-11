@@ -40,6 +40,7 @@ export const CreateComment = ({ postId }: { postId: string }) => {
         value={commentContent}
         onChange={(e) => setCommentContent(e.target.value)}
         rows={2}
+        autoFocus
       />
       <button onClick={handleCommentSubmit}>Envoyer</button>
     </form>

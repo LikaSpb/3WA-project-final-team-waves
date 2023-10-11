@@ -153,6 +153,7 @@ const Comments = ({ postId, comments }: CommentsProps) => {
                     value={editedContent}
                     onChange={(e) => setEditedContent(e.target.value)}
                     rows={5}
+                    autoFocus 
                   />
                   <button type="submit" className="icon-button">
                     <FloppyDiskIcon />

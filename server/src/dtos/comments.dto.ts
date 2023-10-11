@@ -1,5 +1,4 @@
-import { IsString, IsNotEmpty } from 'class-validator'
-import { Types } from 'mongoose'
+import { IsString } from 'class-validator'
 
 export class CommentDto {
   @IsString()

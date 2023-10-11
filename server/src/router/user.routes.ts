@@ -8,13 +8,7 @@ const usersController = new UsersController()
 
 const router = Router()
 
-router.post('/login', validationMiddleware(UserDto), usersController.loginUser)
-
-router.post(
-  '/register',
-  validationMiddleware(UserDto),
-  usersController.registerUser,
-)
+router.post('/register', validationMiddleware(UserDto), usersController.register)
 
 router.get('/', usersController.getAllUsers)
 

@@ -54,6 +54,7 @@
 
             &.open .navbar-links {
                 display: flex;
+                z-index: 120000000000;
             }
 
             .navbar-links {

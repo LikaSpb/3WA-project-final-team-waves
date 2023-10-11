@@ -6,44 +6,12 @@ import { CODERESPONSE } from '../constants/CodeResponse'
 export class UsersController {
   private usersService = new UsersService()
 
-  public loginUser = async (req: Request, res: Response) => {
+  public register = async (req: Request, res: Response) => {
     try {
       const userData: UserDto = req.body
 
-      if (!userData.picture) {
-        // userData.picture = DEFAULT_PROFILE_PICTURE
-      }
-
       const newUser = await this.usersService.addUser(userData)
       res.status(CODERESPONSE.CREATED).json(newUser)
-    } catch (error) {
-      res.status(CODERESPONSE.BAD_REQUEST).json({ error: error.message })
-    }
-  }
-
-  public readonly registerUser = async (req: Request, res: Response) => {
-    try {
-      const { email, password } = req.body
-
-      const user = await this.usersService.findUserByEmail(email)
-
-      if (!user) {
-        res
-          .status(CODERESPONSE.BAD_REQUEST)
-          .json({ error: 'User does not exist' })
-        return
-      }
-
-      const isPasswordValid = await user.comparePassword(password)
-
-      if (!isPasswordValid) {
-        res
-          .status(CODERESPONSE.UNAUTHORIZED)
-          .json({ error: 'Invalid password' })
-        return
-      }
-
-      res.status(CODERESPONSE.OK).json({ token: 'your_token_here', user })
     } catch (error) {
       res.status(CODERESPONSE.BAD_REQUEST).json({ error: error.message })
     }

@@ -76,5 +76,3 @@ export class AuthController {
     }
   }
 }
-
-// controller gere les rep envoyes au front

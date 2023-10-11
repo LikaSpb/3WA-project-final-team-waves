@@ -52,6 +52,11 @@
                 resize: none;
                 box-sizing: border-box;
                 margin-bottom: 8px;
+
+                &:focus {
+                    border-color: $primaryColorBlue;
+                    outline: none;
+                }
             }
 
             .icon-button {

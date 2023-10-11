@@ -5,11 +5,10 @@
     background-color: $backgroundColor;
     border: 1px solid $borderColor;
     border-radius: 8px;
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
 
     &:hover {
         box-shadow: 0px 4px 12px $shadowColor;
-        transform: scale(1.02);
     }
 
     .post-author {
@@ -23,6 +22,8 @@
             height: 35px;
             border-radius: 50%;
             margin-right: 8px;
+            object-fit: cover;
+            object-position: center;
         }
 
         span {
@@ -46,7 +47,8 @@
         transition: border 0.2s;
 
         &:focus {
-            border-color: $primaryColor;
+            border-color: $primaryColorBlue;
+            outline: none;
         }
     }
 

@@ -50,18 +50,13 @@ const Navbar = () => {
           {isMenuOpen && (
             <ul className="navbar-links">
               <li className="navbar-item">
-                <Link to="/" className="navbar-link">
+                <Link to="/main/news" className="navbar-link">
                   Accueil
                 </Link>
               </li>
               <li className="navbar-item">
                 <Link to="profil" className="navbar-link">
                   Mon Profil
-                </Link>
-              </li>
-              <li className="navbar-item">
-                <Link to="news" className="navbar-link">
-                  Fil d'actualité
                 </Link>
               </li>
               <li className="navbar-item">

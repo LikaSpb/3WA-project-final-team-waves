@@ -16,12 +16,10 @@ const Login: React.FC<ILoginProps> = ({ onRegisterClick }) => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loginError, setLoginError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
-  const [remember, setRemember] = useState(false);
   const navigate = useNavigate();
   const { showNotifications } = useNotifications();
   const dispatch = useAppDispatch();
   const socket = useSocket();
-  const [authToken, setAuthToken] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,13 +30,8 @@ const Login: React.FC<ILoginProps> = ({ onRegisterClick }) => {
       );
 
       const { _id, firstname, token } = response.data;
-
-      if (remember) {
-        window.localStorage.setItem("authToken", token);
-        window.localStorage.setItem("userId", _id);
-      } else {
-        setAuthToken(token);
-      }
+      
+      window.localStorage.setItem("userId", _id);
 
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
@@ -105,17 +98,6 @@ const Login: React.FC<ILoginProps> = ({ onRegisterClick }) => {
             </div>
           </div>
           {loginError && <p className="error-message">{loginError}</p>}
-          <div className="remember-forgot">
-            <label className="remember-label">
-              <input
-                type="checkbox"
-                onChange={(e) => setRemember(e.target.checked)}
-                checked={remember}
-              />
-              <span className="remember-text">Se souvenir de moi</span>
-            </label>
-          </div>
-
           <button type="submit">Se connecter</button>
         </form>
         <div className="register-link">

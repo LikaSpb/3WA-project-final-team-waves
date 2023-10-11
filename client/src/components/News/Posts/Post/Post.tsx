@@ -102,6 +102,7 @@ export const Post = ({ data }: { data: IPost }) => {
             value={editedContent}
             onChange={(e) => setEditedContent(e.target.value)}
             rows={5}
+            autoFocus
           />
           <button type="submit" className="icon-button">
             <FloppyDiskIcon />

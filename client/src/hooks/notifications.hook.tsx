@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppDispatch } from "./store.hooks";
 import { changeValue, clearValue } from "../store/slicers/notification";
 
@@ -10,7 +9,7 @@ export const useNotifications = () => {
     message: string,
     timer?: number
   ) => {
-    const finaltimer = timer ?? 2000;
+    const finaltimer = timer ?? 3000;
     dispatch(clearValue());
 
     dispatch(

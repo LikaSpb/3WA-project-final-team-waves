@@ -9,6 +9,7 @@ $MinScreenDesktop: 900px;
 
 $navbar-height : 50px;
 
+$primaryColorBlue : rgba(1, 34, 95, 0.8196078431);
 $primaryColor: #ff6600;
 $primaryColorHover: #ff5500;
 $secondaryColor: #4caf50;
@@ -37,6 +38,10 @@ $sidebarWidth : 20%;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow-x: hidden
 }
 
 // import
@@ -72,8 +77,5 @@ $sidebarWidth : 20%;
 
 @import './News/Sidebar/index.scss';
 @import './News/Sidebar/index-tablet.scss';
-
-
-@import './NewsPage';
 
 @import './Notifications';

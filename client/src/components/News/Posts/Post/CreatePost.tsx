@@ -46,6 +46,7 @@ export const CreatePost = () => {
             value={inputNewPost}
             onChange={(e) => setInputNewPost(e.target.value)}
             rows={10}
+            autoFocus
           />
           <button type="submit">Envoyer</button>
         </form>

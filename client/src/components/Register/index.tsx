@@ -35,6 +35,8 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
       [name]: value,
     }));
 
+    setPasswordMatchError(false);
+
     if (name === "dateOfBirth") {
       if (new Date(value) > new Date()) {
         setDateError(
@@ -57,10 +59,15 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
       setDateError(null);
     }
 
-    if (registerData.password !== registerData.confirmPassword) {
-      setPasswordMatchError(true);
+    if (!registerData.dateOfBirth) {
+      showNotifications(
+        "error",
+        "Erreur d'enregistrement",
+        "La date de naissance est obligatoire."
+      );
       return;
     }
+
     if (registerData.password !== registerData.confirmPassword) {
       setPasswordMatchError(true);
       return;
@@ -68,7 +75,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
 
     try {
       const response = await axios.post(
-        `${Config.baseUrlApi}/users/login`,
+        `${Config.baseUrlApi}/users/register`,
         registerData
       );
 
@@ -122,6 +129,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               placeholder="Mon prénom"
               value={registerData.firstname}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="input-container">
@@ -131,6 +139,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               placeholder="Mon nom"
               value={registerData.lastname}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="input-container">
@@ -141,6 +150,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               value={registerData.dateOfBirth}
               onChange={handleInputChange}
               max={today}
+              required
             />
             {dateError && <div className="error-message">{dateError}</div>}
           </div>
@@ -151,6 +161,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               placeholder="Email"
               value={registerData.email}
               onChange={handleInputChange}
+              required
             />
             {emailError && <div className="error-message">{emailError}</div>}
           </div>
@@ -161,6 +172,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               placeholder="Mon métier"
               value={registerData.jobTitle}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="input-container">
@@ -170,6 +182,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               placeholder="Mon entreprise"
               value={registerData.company}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="input-container">
@@ -179,6 +192,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               placeholder="Password"
               value={registerData.password}
               onChange={handleInputChange}
+              required
             />
             <div
               className="eye-icon"
@@ -194,6 +208,7 @@ const Register: React.FC<IRegisterProps> = ({ onLoginClick }) => {
               placeholder="Confirm Password"
               value={registerData.confirmPassword}
               onChange={handleInputChange}
+              required
             />
             <div
               className="eye-icon"

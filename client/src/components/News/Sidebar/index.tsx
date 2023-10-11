@@ -32,7 +32,7 @@ const Sidebar = () => {
     <div className={`sidebar ${isScrolling ? "scrolling" : ""}`}>
       <ul className={`${isScrolling ? "hidden" : ""}`}>
         <li>
-          <Link to="/">Accueil</Link>
+          <Link to="/main/news">Accueil</Link>
         </li>
         <li>
           <Link to="/main/profil">Profil</Link>
