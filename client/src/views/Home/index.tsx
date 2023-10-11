@@ -12,7 +12,7 @@ const Home = () => {
           </div>
           <div className="text">
             <h1>Team Waves</h1>
-            <h2>Riding the current of success</h2>
+            <h2>Riding the wave of success</h2>
             <Link to="/login" className="custom-button">
               Start Your Journey
             </Link>

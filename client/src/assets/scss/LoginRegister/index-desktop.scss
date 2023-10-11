@@ -6,10 +6,21 @@
     }
 
     .left-container {
-        display: block;
+        display: flex;
         background-color: $secondaryBackgroundColorHover;
         width: 50%;
         height: 100vh;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 30%;
+            object-fit: contain;
+            filter: invert(1);
+            opacity: 0;
+            transform: scale(0) rotate(-360deg);
+            animation: LogoEnterAnimation 2s ease-in forwards;
+        }
     }
 
     .login-register-container {
@@ -18,5 +29,17 @@
         align-items: center;
         justify-content: center;
         padding: 40px;
+    }
+}
+
+@keyframes LogoEnterAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0) rotate(-360deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
     }
 }
