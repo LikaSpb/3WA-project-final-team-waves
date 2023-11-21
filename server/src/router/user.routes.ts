@@ -17,6 +17,7 @@ router.get('/connected', usersController.getAllUsersConnected)
 router.get('/:id', usersController.getOneUser)
 
 router.put('/:id', usersController.editUser)
+
 router.put(
   '/:userId/profilepicture',
   upload.single('profilePicture'),

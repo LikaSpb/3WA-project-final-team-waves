@@ -70,8 +70,6 @@ class UsersService {
       const user = await UserModel.findById(userId)
       if (!user) throw new Error('User not found')
 
-      //TODO CHECK IF OLD PASSWORD IS GOOD ELSE RETURN AN ERROR PASSWORD
-
       user.password = newPassword
       const updatedUser = await user.save()
 
